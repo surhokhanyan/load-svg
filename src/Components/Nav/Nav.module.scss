@@ -1,0 +1,143 @@
+@import "../Mixins/Mixins";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.nav{
+    width: 1366px;
+    height: 200px;
+    //background-color: yellow;
+    @include flexCenter();
+    justify-content: flex-start;
+    ul{
+        min-width: 100px;
+        max-width: 100%;
+        height: 100%;
+        @include flexCenter();
+        justify-content: flex-start;
+        position: relative;
+        li{
+            width: 150px;
+            height: 100%;
+            list-style: none;
+            a{
+                width: 100%;
+                height: 100%;
+                @include flDownAround();
+                text-decoration: none;
+                position: relative;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                }
+                .btnPlace{
+                    width: 200px;
+                    height: 4px;
+                    @include flexCenter();
+                    position: relative;
+                    .modalColor{
+                        width: 100%;
+                        height: 30px;
+                        @include flexBetween();
+                        background-color: white;
+                        position: absolute;
+                        border-radius: 10px;
+                        top: -35px;
+                        z-index: 100;
+                        button{
+                            width: 20px;
+                            height: 20px;
+                            border: none;
+                            cursor: pointer;
+                            border-radius: 50%;
+                            &:nth-child(1){
+                                background-color: #F5961B;
+                            }
+                            &:nth-child(2){
+                                background-color: #F5421B;
+                            }
+                            &:nth-child(3){
+                                background-color: #5181DF;
+                            }
+                            &:nth-child(4){
+                                background-color: #67AA82;
+                            }
+                            &:nth-child(5){
+                                background-color: #E2E47A;
+                            }
+                        }
+                        .save{
+                            width: 50px;
+                            height: 20px;
+                            border-radius: 10px;
+                            background-color: blue;
+                            border: 2px solid blue;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: bold;
+                            color: white;
+                            transition: .5s;
+                            &:hover{
+                                border-color: blue;
+                                background-color: white;
+                                color: blue;
+                            }
+                        }
+                    }
+                    #colorBtn{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        border: none;
+                        z-index: 9;
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: -21.5px;
+
+                    }
+                    .active{
+                        transform: scale(1.2);
+                    }
+                }
+                p{
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22px;
+                    text-transform: capitalize;
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .gradient{
+            width: 100%;
+            height: 4px;
+            z-index: 5;
+            border: none;
+            position: absolute;
+            bottom: 70px;
+        }
+    }
+    .addLi{
+        width: 20px;
+        height: 100%;
+        @include flexCenter();
+        position: relative;
+        .add{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #12B352;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            color: white;
+            @include flexCenter();
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 62.5px;
+            right: 0;
+            z-index: 100;
+        }
+    }
+}

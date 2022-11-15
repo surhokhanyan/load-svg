@@ -1,0 +1,148 @@
+@import "../Mixins/Mixins";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.modal{
+    width: 100%;
+    height: 100vh;
+    @include flexCenter();
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    z-index: 999;
+    .main{
+        width: 400px;
+        height: 400px;
+        background: #545662;
+        border-radius: 5px;
+        @include flDownEvenly();
+        position: relative;
+        padding-top: 38px;
+        .close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            @include flexCenter();
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: .5s;
+            border-radius: 50%;
+            &:hover{
+                background-color: #F5421B;
+            }
+            svg{
+                width: 100%;
+                height: 100%;
+                color: #827E7E;
+            }
+        }
+        .upload{
+            width: 350px;
+            height: 150px;
+            @include flexCenter();
+            position: relative;
+            div{
+                width: 165px;
+                height: 150px;
+                @include flDownEvenly();
+                background: #383A45;
+                border-radius: 10px;
+                cursor: pointer;
+                position: relative;
+                img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    text-align: center;
+                    line-height: 100px;
+                    font-size: 90px;
+                    color: #F5961B;
+                }
+                p{
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    color: #FFFFFF;
+                    opacity: 0.55;
+                }
+                input{
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    position: absolute;
+                    cursor: pointer;
+                }
+            }
+            span{
+                font-size: 14px;
+                font-family: 'Roboto', sans-serif;
+                color: #F5421B;
+                font-weight: bold;
+                position: absolute;
+                bottom: -18px;
+            }
+        }
+        label{
+            width: 350px;
+            height: 80px;
+            @include flDownBetween();
+            align-items: flex-start;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            position: relative;
+            input{
+                width: 100%;
+                height: 50px;
+                border-radius: 10px;
+                border: 2px solid white;
+                outline: none;
+                padding-left: 10px;
+                font-weight: 400;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                color: #383A45;
+            }
+            span{
+                position: absolute;
+                bottom: -25px;
+                color: #F5421B;
+                font-size: 14px;
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
+            }
+        }
+        .btnPlace{
+            width: 350px;
+            height: 80px;
+            @include flexCenter();
+            justify-content: flex-end;
+            .save{
+                width: 165px;
+                height: 50px;
+                background: #F5961B;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+                border-radius: 25px;
+                border: 2px solid #F5961B;
+                transition: all ease-in-out .5s;
+                cursor: pointer;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+
+                &:hover{
+                    background-color: #383A45;
+                    color: #F5961B;
+                }
+            }
+        }
+    }
+}
